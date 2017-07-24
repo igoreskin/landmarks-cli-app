@@ -9,7 +9,16 @@ class Landmarks::Landmark
   end
 
   def name
+    Landmarks::Scraper.scrape_landmark_name(url)
+  end
 
+  def description
+    Landmarks::Scraper.scrape_landmark_description(url)
+  end
+
+  def directions
+    Landmarks::Scraper.scrape_landmark_description(url)
+  end
 
 
 end
