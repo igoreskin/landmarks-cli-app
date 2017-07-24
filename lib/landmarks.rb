@@ -1,5 +1,7 @@
-require "landmarks/version"
+require_relative "../lib/landmarks/version"
 
 module Landmarks
-  # Your code goes here...
+
 end
+
+require_relative '../config/environment'

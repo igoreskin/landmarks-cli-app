@@ -1,0 +1,3 @@
+class Landmarks::CLI
+
+end 
