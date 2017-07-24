@@ -27,5 +27,11 @@ class Landmarks::Scraper
     Nokogiri::HTML(open(url))
   end
 
+  def scrape_landmark_description(url)
+  	puts self.get_landmark_page(url).css("h1").text
+  	puts self.get_landmark_page(url).css("p").text
+  	puts self.get_landmark_page(url).css(".prop-list").text
+  end
+
 
 end
