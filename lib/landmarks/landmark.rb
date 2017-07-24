@@ -8,5 +8,8 @@ class Landmarks::Landmark
     @@all << self
   end
 
+  def name
+
+
 
 end
