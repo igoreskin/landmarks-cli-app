@@ -1,0 +1,5 @@
+class Landmarks::Landmark
+
+
+
+end
