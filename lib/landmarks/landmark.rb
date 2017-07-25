@@ -4,7 +4,7 @@ class Landmarks::Landmark
 
   @@all = []
 
-  def initialize(name, url)
+  def initialize(name=nil, url=nil)
     @name = name
     @url = url
     @@all << self
@@ -16,15 +16,15 @@ class Landmarks::Landmark
 
   @@scraper = Landmarks::Scraper.new
 
-  def name(url)
+  def name
     @@scraper.scrape_landmark_name(@url)
   end
 
-  def description(url)
+  def description
     @@scraper.scrape_landmark_description(@url)
   end
 
-  def directions(url)
+  def directions
     @@scraper.scrape_landmark_directions(@url)
   end
 
