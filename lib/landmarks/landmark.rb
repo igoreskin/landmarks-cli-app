@@ -1,10 +1,12 @@
 class Landmarks::Landmark
 
-  attr_accessor :name, :description, :directions
+  attr_accessor :name, :description, :directions, :url
 
   @@all = []
 
-  def initialize
+  def initialize(name, url)
+    @name = name
+    @url = url
     @@all << self
   end
 
@@ -15,15 +17,15 @@ class Landmarks::Landmark
   @@scraper = Landmarks::Scraper.new
 
   def name(url)
-    @@scraper.scrape_landmark_name(url)
+    @@scraper.scrape_landmark_name(@url)
   end
 
   def description(url)
-    @@scraperr.scrape_landmark_description(url)
+    @@scraper.scrape_landmark_description(@url)
   end
 
   def directions(url)
-    @@scraper.scrape_landmark_directions(url)
+    @@scraper.scrape_landmark_directions(@url)
   end
 
 end

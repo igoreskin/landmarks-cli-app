@@ -2,9 +2,10 @@ class Landmarks::CLI
 
   def call
     puts "Welcome to Top 20 St. Petersburg Architectural Landmarks!"
-    Landmarks::Scraper.new.print_the_title
+    scraper = Landmarks::Scraper.new
+    scraper.print_the_title
     puts ""
-    Landmarks::Scraper.new.print_landmarks_index
+    scraper.print_landmarks_index
     puts ""
     start
   end
