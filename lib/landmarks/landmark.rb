@@ -8,17 +8,22 @@ class Landmarks::Landmark
     @@all << self
   end
 
-  def name
-    Landmarks::Scraper.scrape_landmark_name(url)
+  def self.all
+    @@all
   end
 
-  def description
-    Landmarks::Scraper.scrape_landmark_description(url)
+  @@scraper = Landmarks::Scraper.new
+
+  def name(url)
+    @@scraper.scrape_landmark_name(url)
   end
 
-  def directions
-    Landmarks::Scraper.scrape_landmark_description(url)
+  def description(url)
+    @@scraperr.scrape_landmark_description(url)
   end
 
+  def directions(url)
+    @@scraper.scrape_landmark_directions(url)
+  end
 
 end
