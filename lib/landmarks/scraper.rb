@@ -17,28 +17,16 @@ class Landmarks::Scraper
     puts self.get_page.css("h1").text
   end
 
-=begin
   def print_landmarks_index
-    list = []
-    Landmarks::Landmark.all.each { |el| list << "#{el.name}".gsub(/^\s*/, '') }
-    list
-    list.each.with_index { |el, index| puts "#{el}".strip }
+    Landmarks::Landmark.all.each.with_index do |el, index|
+      if el.name.include?("\r\n")
+        puts "#{index+1}. #{el.name}".gsub("\r\n", "")
+      else
+        puts "#{index+1}.\t#{el.name}"
+      end
+    end
     nil
   end
-
-
-  def print_landmarks_index
-    Landmarks::Landmark.all.each.with_index { |el, index| puts "#{index+1}.".strip, "#{el.name}".strip } #.gsub("u00A0", "\t") }
-    nil
-  end
-=end
-
-  def print_landmarks_index
-    Landmarks::Landmark.all.each.with_index { |el, index| puts "#{index+1}. #{el.name}".gsub("\r\n", "") }
-    nil
-  end
-
-
 
   def print_landmarks_urls
     Landmarks::Landmark.all.each.with_index { |el, index| puts "#{index+1}.\t#{el.url}" }
@@ -46,7 +34,7 @@ class Landmarks::Scraper
   end
 
 
-def get_landmark_page(url)
+  def get_landmark_page(url)
     Nokogiri::HTML(open(url))
   end
 
