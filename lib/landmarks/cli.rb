@@ -16,13 +16,51 @@ class Landmarks::CLI
     input = gets.chomp.to_i
     landmark = Landmarks::Landmark.find(input)
     puts "\t\n"
-    puts landmark.name.strip
+    puts landmark.name.strip.upcase
     puts "\t\n"
     puts "\t\t\t\t\t\t================== Description of the Landmark =================="
     puts "\t\n"
     puts landmark.description
+    puts "\t\n"
+    puts "\t\t\t\t\t\t================================================================="
+    puts "\t\n"
+    puts "Would you like to take a look at directions, contact information and business hours? y/n"
+    answer = gets.chomp
 
+    if answer == "y"
+      puts "\t\n"
+      puts "\t\t\t\t\t\t====== Directions, contact information and business hours ======"
+      puts "\t\n"
+      puts landmark.directions
+      puts "\t\n"
+      puts "\t\t\t\t\t\t================================================================="
+      puts "\t\n"
+      puts "Would you like to find out more about another landmark? y/n"
+      response = gets.chomp
 
+      if response == "y"
+        start
+      else
+        puts "\t\n"
+        puts "Thank you for you interest! Have a great day, and welcome again in the future!"
+        puts "\t\n"
+        puts "\t\t\t**************************"
+        puts "\t\n"
+      end
+
+    else
+      puts "\t\n"
+      puts "Would you like to find out more about another landmark? y/n"
+      response = gets.chomp
+      if response == "y"
+        start
+      else
+        puts "Thank you for you interest! Have a great day, and welcome again in the future!"
+        puts "\t\n"
+        puts "\t\t\t**************************"
+        puts "\t\n"
+      end
+    end
   end
 
 
