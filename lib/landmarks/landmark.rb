@@ -20,6 +20,10 @@ class Landmarks::Landmark
 
   @@scraper = Landmarks::Scraper.new
 
+  def self.scraper
+    @@scraper
+  end
+
   def name
     @@scraper.scrape_landmark_name(@url)
   end

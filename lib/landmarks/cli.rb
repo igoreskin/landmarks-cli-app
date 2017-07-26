@@ -2,7 +2,7 @@ class Landmarks::CLI
 
   def call
     puts "Welcome to Top 20 St. Petersburg Architectural Landmarks!"
-    scraper = Landmarks::Scraper.new
+    scraper = Landmarks::Landmark.scraper
     scraper.print_the_title
     scraper.scrape_landmarks_index
     puts ""
@@ -24,7 +24,7 @@ class Landmarks::CLI
     puts "\t\n"
     puts "\t\t\t\t\t\t================================================================="
     puts "\t\n"
-    puts "Would you like to take a look at directions, contact information and business hours? y/n"
+    puts "Would you like to check the availability of directions, contact information and business hours? y/n"
     answer = gets.chomp
 
     if answer == "y"
@@ -62,6 +62,5 @@ class Landmarks::CLI
       end
     end
   end
-
 
 end
