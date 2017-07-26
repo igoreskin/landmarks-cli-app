@@ -13,7 +13,16 @@ class Landmarks::CLI
 
   def start
     puts "Please enter the number of the landmark you would like more information on:"
-    input = gets.strip
+    input = gets.chomp.to_i
+    landmark = Landmarks::Landmark.find(input)
+    puts "\t\n"
+    puts landmark.name.strip
+    puts "\t\n"
+    puts "\t\t\t\t\t\t================== Description of the Landmark =================="
+    puts "\t\n"
+    puts landmark.description
+
+
   end
 
 

@@ -14,6 +14,10 @@ class Landmarks::Landmark
     @@all
   end
 
+  def self.find(number)
+    self.all[number - 1]
+  end
+
   @@scraper = Landmarks::Scraper.new
 
   def name
