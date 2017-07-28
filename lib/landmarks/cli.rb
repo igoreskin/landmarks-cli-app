@@ -15,6 +15,10 @@ class Landmarks::CLI
   def start
     puts "Please enter the number of the landmark you would like more information on:"
     input = gets.chomp.to_i
+    if !input.between?(1, 20)
+      puts "Please enter a number from 1 to 20!"
+      start
+    end
     landmark = Landmarks::Landmark.find(input)
     puts "\t\n"
     puts landmark.name.strip.upcase
@@ -43,7 +47,7 @@ class Landmarks::CLI
         start
       else
         puts "\t\n"
-        puts "Thank you for you interest! Have a great day, and welcome again in the future!"
+        puts "Thank you for your interest! Have a great day, and welcome again in the future!"
         puts "\t\n"
         puts "\t\t\t**************************"
         puts "\t\n"
@@ -56,7 +60,7 @@ class Landmarks::CLI
       if response == "y"
         start
       else
-        puts "Thank you for you interest! Have a great day, and welcome again in the future!"
+        puts "Thank you for your interest! Have a great day, and welcome again in the future!"
         puts "\t\n"
         puts "\t\t\t**************************"
         puts "\t\n"
