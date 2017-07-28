@@ -1,8 +1,6 @@
-# Landmarks
+# Landmarks of St. Petersburg
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/landmarks`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem provides a CLI to view the top 20 architectural landmarks of St. Petersburg with detailed description and other useful information.
 
 ## Installation
 
@@ -22,7 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this gem as a local application, please run ./bin/landmarks from the command line.
+If you have already installed the gem, please enter landmarks in the command line and follow the on-screen prompts.
 
 ## Development
 
