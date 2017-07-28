@@ -7,7 +7,7 @@ This Ruby Gem provides a CLI to view the top 20 architectural landmarks of St. P
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'landmarks'
+gem 'landmarks-of-st-petersburg'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install landmarks
+    $ gem install landmarks-of-st-petersburg
 
 ## Usage
 
