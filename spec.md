@@ -37,7 +37,7 @@ methods are instance methods of the Scraper class, from the point of view of the
 representing a property of the Landmark class.
 
 The detailed view of each landmark is implemented through two instance methods of the Landmark class, #description
-(which provides a detailed description of the landmark selected by the user) and, if the user chooses so, #directions
+(which provides a detailed description of the landmark selected by the user) and, if the user chooses so, #directions2
 (which in turn displays some useful information about the landmark, such as directions, business hours, possible
 admission fees etc., if available). The entire logic of this process is encapsulated in the #start method of the CLI
 class. The #start method then calls itself twice (if, after displaying either the description or the details of the

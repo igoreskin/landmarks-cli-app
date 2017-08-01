@@ -9,7 +9,9 @@ class Landmarks::Scraper
   end
 
   def scrape_landmarks_index
-    self.get_page.css("h2").each { |el| Landmarks::Landmark.new(el.text, "http://www.saint-petersburg.com"+el.css("a").attr("href").text) }
+    self.get_page.css("h2").each do |el|
+      Landmarks::Landmark.new(el.text, "http://www.saint-petersburg.com"+el.css("a").attr("href").text)
+    end
   end
 
 
@@ -17,16 +19,12 @@ class Landmarks::Scraper
     puts self.get_page.css("h1").text
   end
 
-  def print_landmarks_index
-    Landmarks::Landmark.all.each.with_index do |el, index|
-      if el.name.include?("\r\n")
-        puts "#{index+1}. #{el.name}".gsub("\r\n", "")
-      else
-        puts "#{index+1}.\t#{el.name}"
-      end
-    end
-    nil
-  end
+  # def print_landmarks_index
+  #   Landmarks::Landmark.all.each.with_index do |el, index|
+  #       puts "#{index+1}.\t#{el.name}"
+  #   end
+  #   nil
+  # end
 
   def print_landmarks_urls
     Landmarks::Landmark.all.each.with_index { |el, index| puts "#{index+1}.\t#{el.url}" }
